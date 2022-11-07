@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "Yq1MLreYAwIs0Kd8UR0WKGFHzJlnbq1RXMfQGzPxDw4=",
+  "Source": "WebApiMusicaSeg",
+  "BasePath": "_content/WebApiMusicaSeg",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApiMusicaSeg\\wwwroot",
+      "Source": "WebApiMusicaSeg",
+      "ContentRoot": "C:\\Users\\Alejandro\\OneDrive\\Documentos\\TBack\\WebApiMusicaSeg\\WebApiMusicaSeg\\wwwroot\\",
+      "BasePath": "_content/WebApiMusicaSeg",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Alejandro\\OneDrive\\Documentos\\TBack\\WebApiMusicaSeg\\WebApiMusicaSeg\\wwwroot\\Musica_List.txt",
+      "SourceId": "WebApiMusicaSeg",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alejandro\\OneDrive\\Documentos\\TBack\\WebApiMusicaSeg\\WebApiMusicaSeg\\wwwroot\\",
+      "BasePath": "_content/WebApiMusicaSeg",
+      "RelativePath": "Musica_List.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Musica_List.txt"
+    }
+  ]
+}
