@@ -11,5 +11,9 @@ namespace WebApiMusicaSeg.Entidades
 
         public Cancion Cancion { get; set; }
 
+        public string UsuarioId { get; set; }
+
+        public IdentityUser Usuario { get; set; }
+
     }
 }

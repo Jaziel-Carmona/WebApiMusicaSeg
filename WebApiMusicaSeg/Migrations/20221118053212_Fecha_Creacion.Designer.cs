@@ -12,7 +12,7 @@ using WebApiMusicaSeg;
 namespace WebApiMusicaSeg.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221107011917_Fecha_Creacion")]
+    [Migration("20221118053212_Fecha_Creacion")]
     partial class Fecha_Creacion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

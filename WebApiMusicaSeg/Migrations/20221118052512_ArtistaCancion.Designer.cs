@@ -11,8 +11,8 @@ using WebApiMusicaSeg;
 namespace WebApiMusicaSeg.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221107011603_Albums")]
-    partial class Albums
+    [Migration("20221118052512_ArtistaCancion")]
+    partial class ArtistaCancion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

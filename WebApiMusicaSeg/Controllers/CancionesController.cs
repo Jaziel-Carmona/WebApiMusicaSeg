@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
 using WebApiMusicaSeg.Entidades;
 using WebApiMusicaSeg.DTOs;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WebApiMusicaSeg.Controllers
 {
@@ -25,7 +27,9 @@ namespace WebApiMusicaSeg.Controllers
             return await dbContext.Canciones.ToListAsync();
         }
 
+        
         [HttpGet("{id:int}", Name = "obtenerCancion")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
         public async Task<ActionResult<CancionDTOConArtistas>> GetById(int id)
         {
             var cancion = await dbContext.Canciones
@@ -103,7 +107,7 @@ namespace WebApiMusicaSeg.Controllers
                 return NotFound("El Recurso no fue encontrado.");
             }
 
-            //var validateRelation = await dbContext.ArtistaCancion.AnyAsync
+            //var validateRelation = await dbContext.ArtistaCancion.AnyAsync   
 
 
             dbContext.Remove(new Cancion { Id = id });

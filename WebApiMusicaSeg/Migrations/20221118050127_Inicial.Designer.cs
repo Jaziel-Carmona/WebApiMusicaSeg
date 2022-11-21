@@ -11,8 +11,8 @@ using WebApiMusicaSeg;
 namespace WebApiMusicaSeg.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221107011303_ArtistaCancion")]
-    partial class ArtistaCancion
+    [Migration("20221118050127_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,24 +41,6 @@ namespace WebApiMusicaSeg.Migrations
                     b.ToTable("Artistas");
                 });
 
-            modelBuilder.Entity("WebApiMusicaSeg.Entidades.ArtistaCancion", b =>
-                {
-                    b.Property<int>("ArtistaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CancionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Orden_Lanzamiento")
-                        .HasColumnType("int");
-
-                    b.HasKey("ArtistaId", "CancionId");
-
-                    b.HasIndex("CancionId");
-
-                    b.ToTable("ArtistaCancion");
-                });
-
             modelBuilder.Entity("WebApiMusicaSeg.Entidades.Cancion", b =>
                 {
                     b.Property<int>("Id")
@@ -75,35 +57,6 @@ namespace WebApiMusicaSeg.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Canciones");
-                });
-
-            modelBuilder.Entity("WebApiMusicaSeg.Entidades.ArtistaCancion", b =>
-                {
-                    b.HasOne("WebApiMusicaSeg.Entidades.Artista", "Artista")
-                        .WithMany("ArtistaCancion")
-                        .HasForeignKey("ArtistaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WebApiMusicaSeg.Entidades.Cancion", "Cancion")
-                        .WithMany("ArtistaCancion")
-                        .HasForeignKey("CancionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Artista");
-
-                    b.Navigation("Cancion");
-                });
-
-            modelBuilder.Entity("WebApiMusicaSeg.Entidades.Artista", b =>
-                {
-                    b.Navigation("ArtistaCancion");
-                });
-
-            modelBuilder.Entity("WebApiMusicaSeg.Entidades.Cancion", b =>
-                {
-                    b.Navigation("ArtistaCancion");
                 });
 #pragma warning restore 612, 618
         }

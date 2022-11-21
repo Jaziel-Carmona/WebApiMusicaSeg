@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApiMusicaSeg.Entidades;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace WebApiMusicaSeg
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {

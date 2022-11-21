@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiMusicaSeg.Entidades;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApiMusicaSeg.Controllers
 {
     [ApiController]
-    [Route("api/musica")]
-    //[Authorize]
+    [Route("artistas")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
     public class MusicaController : ControllerBase
     {
         private readonly ApplicationDbContext dbContext;
@@ -24,6 +26,7 @@ namespace WebApiMusicaSeg.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<List<GetArtistaDTO>>> Get()
         {
             var artistas = await dbContext.Artistas.ToListAsync();
